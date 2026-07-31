@@ -1,0 +1,227 @@
+{
+  "app_name": "MediGuide AI",
+  "personality": "1 iOS-Native Clean structure fused with 6 Glass / Luxe surfaces",
+  "personality_one_liner": "A cinematic, premium medical assistant that pairs the structural clarity of Apple Health with the rich depth, translucency, and dark-mode elegance of a modern Stripe/Linear-inspired startup product.",
+  "color": {
+    "light": {
+      "surface": "#F9FAFB",
+      "onSurface": "#0F172A",
+      "surfaceSecondary": "#FFFFFF",
+      "onSurfaceSecondary": "#334155",
+      "surfaceTertiary": "#F1F5F9",
+      "onSurfaceTertiary": "#475569",
+      "surfaceInverse": "#0F172A",
+      "onSurfaceInverse": "#FFFFFF",
+      "brand": "#2563EB",
+      "brandPrimary": "#2563EB",
+      "onBrandPrimary": "#FFFFFF",
+      "brandSecondary": "#14B8A6",
+      "onBrandSecondary": "#FFFFFF",
+      "brandTertiary": "#DBEAFE",
+      "onBrandTertiary": "#1E3A8A",
+      "success": "#22C55E",
+      "onSuccess": "#FFFFFF",
+      "warning": "#F59E0B",
+      "onWarning": "#FFFFFF",
+      "error": "#EF4444",
+      "onError": "#FFFFFF",
+      "info": "#8B5CF6",
+      "onInfo": "#FFFFFF",
+      "border": "#E2E8F0",
+      "borderStrong": "#CBD5E1",
+      "divider": "#F1F5F9"
+    },
+    "dark": {
+      "surface": "#080A0A",
+      "onSurface": "#F8FAFC",
+      "surfaceSecondary": "#121415",
+      "onSurfaceSecondary": "#CBD5E1",
+      "surfaceTertiary": "#1A1D1F",
+      "onSurfaceTertiary": "#94A3B8",
+      "surfaceInverse": "#F8FAFC",
+      "onSurfaceInverse": "#080A0A",
+      "brand": "#2563EB",
+      "brandPrimary": "#3B82F6",
+      "onBrandPrimary": "#FFFFFF",
+      "brandSecondary": "#2DD4BF",
+      "onBrandSecondary": "#080A0A",
+      "brandTertiary": "#172554",
+      "onBrandTertiary": "#DBEAFE",
+      "success": "#4ADE80",
+      "onSuccess": "#080A0A",
+      "warning": "#FBBF24",
+      "onWarning": "#080A0A",
+      "error": "#F87171",
+      "onError": "#080A0A",
+      "info": "#A78BFA",
+      "onInfo": "#080A0A",
+      "border": "#1F2327",
+      "borderStrong": "#334155",
+      "divider": "#1A1D1F"
+    }
+  },
+  "typography": {
+    "displayFontFamily": "Geist",
+    "textFontFamily": "Geist",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Follow an absolute 4px grid system inspired by Linear. Use 4px increments for padding, 16px gaps between cards. Never use arbitrary margin values.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": 1,
+  "navigation": "bottom_tabs",
+  "icon_set": "Phosphor",
+  "glassmorphism": {
+    "enabled": true,
+    "do's": [
+      "Use subtle glassmorphism (translucency + background blur) for the bottom tab bar, sticky headers, and floating action buttons.",
+      "Apply frosted glass over featured health metrics or AI summary cards to give a premium depth over subtle mesh gradients.",
+      "Ensure an underlying tint (>= 70% surface color) beneath the blur to guarantee text contrast."
+    ],
+    "dont's": [
+      "Do not apply glass effects everywhere; avoid on body text or standard list rows.",
+      "Do not forget to use dark text on light glass panels and vice versa."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "haptics": {
+    "primary_button": "impactMedium",
+    "tab_change": "selection",
+    "timeline_checkbox": "notificationSuccess",
+    "toggle_switch": "impactLight",
+    "upload_complete": "notificationSuccess"
+  },
+  "screens": [
+    {
+      "name": "Landing",
+      "purpose": "A cinematic introduction combining elegant hero graphics, statistics, and Google Auth entry.",
+      "states": {
+        "loading": "Subtle branded skeleton loader.",
+        "empty": "N/A",
+        "error": "Soft error toast with a retry prompt."
+      },
+      "layout": "Use a full-bleed hero image at the top featuring a subtle mesh gradient and abstract medical cross. Center-aligned display typography (Geist, xl/2xl) emphasizing intelligence and clarity. Bottom 1/3 contains a sticky container with a primary 'Continue with Google' CTA and elegant feature chips in an asymmetrical layout."
+    },
+    {
+      "name": "Dashboard",
+      "purpose": "The central hub displaying today's health score, upcoming medicines, and quick shortcuts.",
+      "states": {
+        "loading": "Animated skeleton cards for health score and medicines.",
+        "empty": "A glassmorphic empty card with a 3D medical folder illustration and a CTA to 'Upload First Report'.",
+        "error": "A readable message with a 'Refresh' button."
+      },
+      "layout": "Strict 4px grid. A welcome header with user avatar. A hero 'Health Score' card with a subtle teal gradient and glassmorphism. Below it, horizontal scroll or a 2-column grid for 'Today's Medicines' and 'Recent Reports'. A prominent floating action button (FAB) for 'Quick Upload' using a brand-tinted glass effect."
+    },
+    {
+      "name": "Upload Report & OCR",
+      "purpose": "Seamless camera/gallery ingestion with a highly polished AI processing animation.",
+      "states": {
+        "loading": "An immersive OCR scanning animation (simulated skeleton text scanning).",
+        "empty": "N/A",
+        "error": "Error reading text: 'Image unclear, please retake' with a Retry button."
+      },
+      "layout": "Camera viewfinder full screen with Apple-style rounded overlay controls at the bottom. Once captured, display the image in a large elevated card with a progress bar and scanning line moving vertically. Keep interactions locked until AI processing completes."
+    },
+    {
+      "name": "AI Analysis Result",
+      "purpose": "To beautifully present complex medical data (disease, instructions, side effects) in simple terms.",
+      "states": {
+        "loading": "Shimmer effect over structured text lines.",
+        "empty": "N/A",
+        "error": "Could not generate analysis. Retry button."
+      },
+      "layout": "Apple Health style structured cards. Start with a top 'Confidence Score' badge. Follow with distinct expandable cards for 'Simple Explanation', 'Prescription List', and 'Doctor Instructions'. Use colored icons (Teal for instructions, Warning for side effects) within brandTertiary rounded squares for each section header."
+    },
+    {
+      "name": "Medicine Timeline",
+      "purpose": "A beautiful daily schedule showing completed, pending, and skipped medications.",
+      "states": {
+        "loading": "Timeline skeleton with fading circles.",
+        "empty": "A 3D pill capsule illustration stating 'No medicines scheduled for today'.",
+        "error": "Unable to load schedule. Retry button."
+      },
+      "layout": "Day-wise timeline split into Morning, Afternoon, Evening, Night sections. Use a continuous vertical line with visual checkboxes on the left. Cards show medicine picture, dose, and instructions. Checked items fade to surfaceTertiary; pending items use brandPrimary indicators. A sticky tabbed filter (All/Morning/Noon/Night) at the top."
+    },
+    {
+      "name": "AI Chat",
+      "purpose": "A secure, grounded conversational interface to ask questions about uploaded reports.",
+      "states": {
+        "loading": "Three pulsing dots in a chat bubble.",
+        "empty": "Start a conversation. Suggested prompt chips (e.g., 'What does my cholesterol level mean?').",
+        "error": "Message failed to send. Tap to retry."
+      },
+      "layout": "Apple Messages inspired. Center panel for chat with subtle shadows on bubbles. A disclaimer banner fixed at the top ('Not medical advice'). The input field at the bottom has a blurred glass background and attachment icon. Use structured response cards within the chat for lab results instead of plain text walls."
+    },
+    {
+      "name": "Emergency Card",
+      "purpose": "A fast-access, high-contrast screen with vital information and a QR code.",
+      "states": {
+        "loading": "Spinner centered.",
+        "empty": "Prompt to 'Fill out Emergency Details'.",
+        "error": "Error loading details."
+      },
+      "layout": "A single, highly prominent Apple Wallet-style card dominating the screen, utilizing an error/warning subtle gradient (Error #EF4444) for visibility. Contains a scannable QR code, large blood group text, allergy tags, and emergency contacts in a clean list below."
+    }
+  ],
+  "images": {
+    "landing_hero_bg": {
+      "url": "https://images.unsplash.com/photo-1672080070762-764c74ee1227?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMG1lZGljYWwlMjBjcm9zcyUyMGdsYXNzbW9ycGhpc20lMjAzZHxlbnwwfHx8fDE3ODQzMDQ4OTF8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "abstract medical cross glassmorphism 3d"
+    },
+    "dashboard_mesh_gradient": {
+      "url": "https://images.unsplash.com/photo-1760442903561-4c6f5663f163?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxzdWJ0bGUlMjBtZXNoJTIwZ3JhZGllbnQlMjBiYWNrZ3JvdW5kJTIwYmx1ZSUyMHRlYWx8ZW58MHx8fHwxNzg0MzA0ODkyfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "subtle mesh gradient background blue teal"
+    },
+    "user_avatar": {
+      "url": "https://images.unsplash.com/photo-1675869940341-d495d49010b5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxmcmllbmRseSUyMHlvdW5nJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg0MzA0ODkzfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "friendly young professional portrait"
+    },
+    "empty_medicine_illustration": {
+      "url": "https://images.unsplash.com/photo-1544991875-5dc1b05f607d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwxfHwzZCUyMHBpbGwlMjBjYXBzdWxlJTIwbWVkaWNpbmUlMjBpc29sYXRlZHxlbnwwfHx8fDE3ODQzMDQ4OTF8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "3d pill capsule medicine isolated"
+    },
+    "empty_report_illustration": {
+      "url": "https://images.unsplash.com/photo-1582719478250-c894e4dc929e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "alt": "medical folder abstract illustration"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Follow the specific hex codes requested by the user: Primary #2563EB, Secondary #14B8A6, Accent #8B5CF6.",
+    "Implement an absolute 4px grid spacing system (e.g., margins/padding of 4, 8, 12, 16, 24) to achieve the Linear-inspired structural layout.",
+    "Utilize `expo-image` with gradient overlays (scrims) to guarantee text contrast whenever placing text above imagery.",
+    "Implement Glassmorphism utilizing `expo-blur` or `expo-glass-effect` primarily on the bottom tab bar, sticky headers, and floating action buttons.",
+    "Ensure the Medicine Timeline uses a vertical tracking line and applies striking visual feedback (color changes and haptics) upon checking a medicine.",
+    "AI Chat must follow an Apple Health aesthetic - clean, well-spaced rounded bubbles, with structured sub-cards inside the chat for complex data rather than large text blocks.",
+    "Ensure 'Emergency Card' is deeply contrasting and stylized akin to an Apple Wallet pass for rapid glanceability."
+  ]
+}
