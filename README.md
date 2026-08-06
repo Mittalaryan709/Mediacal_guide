@@ -8,6 +8,7 @@ An AI-powered assistant that helps you understand medical reports, prescriptions
 - Track medicine adherence and reminders
 - Health analytics dashboard
 
+
 ## Tech Stack
 - Frontend: React Native / Expo
 - Backend: Python (FastAPI)
