@@ -9,6 +9,7 @@ Build a premium AI-powered assistant that helps patients understand prescription
 - Auth: Emergent-managed Google social login
 - MVP scope confirmed; analytics charts & multi-language in phase 2
 
+
 ## Architecture
 - Backend: /app/backend/server.py (FastAPI, single file). MongoDB collections: users, user_sessions, reports, medicines, med_logs, chat_messages, emergency_cards. All routes under /api. Bearer token auth.
 - AI: emergentintegrations LlmChat, Gemini gemini-3-flash-preview. Analyze = image+prompt → structured JSON (report_type, summary, simple_explanation, condition_explanation, doctor_instructions, precautions, confidence, medicines[] with timing). Chat = SSE streaming grounded on recent/selected reports.
