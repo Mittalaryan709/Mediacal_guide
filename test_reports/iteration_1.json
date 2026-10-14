@@ -17,7 +17,8 @@
     "server.py is ~500 lines and still comfortable — no split needed yet.",
     "All Mongo reads exclude _id correctly.",
     "auth/session, analyze, chat all use env vars and Pydantic models — good.",
-    "SSE endpoint sets X-Accel-Buffering: no and streams TextDelta chunks — verified end-to-end."
+    "SSE endpoint sets X-Accel-Buffering: no and streams TextDelta chunks — verified en
+    d-to-end."
   ],
   "updated_files": ["/app/backend/tests/backend_test.py (new)"],
   "success_rate": {"backend": "100%", "frontend": "100%"},
